@@ -1,4 +1,4 @@
-package java8Stream.java8Stream;
+package java8.stream;
 
 /**
  * Hello world!
