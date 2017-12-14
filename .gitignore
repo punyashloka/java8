@@ -16,3 +16,5 @@
 obj/
 [Rr]elease*/
 _ReSharper*/
+/stream/java8Stream/.settings/org.eclipse.jdt.core.prefs
+/stream/java8Stream/.settings/org.eclipse.jdt.core.prefs

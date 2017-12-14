@@ -30,7 +30,7 @@ public class StreamOperations {
 							}).map(dish -> {
 								System.out.println("mapping" + dish.getName()+ "---" + dish.getCalories());
 								System.out.println();
-								return dish.getName();
+								return dish.getName() + "herllo";
 							}).limit(3)
 							.collect(toList());
 							
@@ -41,28 +41,35 @@ public class StreamOperations {
 							/*
 							 * filter pork---800
 							mappingpork---800
-							filter wheat---50
+							filter wheat---50 - noy mached dish.getCalories() > 250;
 							filter beef---700
 							mappingbeef---700
-							filter rice---100
+							filter rice---100 --dish.getCalories() > 250;
 							filter chicken---400
 							mappingchicken---400 // it reached  limit 3 so stop filtering other
 							
 							[pork, beef, chicken]
 							 */
 		
+							System.out.println(" Terminal operations-------------");
+		/*
+		 * Terminal operations produce a result from a stream pipeline. A result
+		 * is any nonstream value such as a List, an Integer, or even void.
+		 * 
+		 * 
+		 */
+							System.out.println(dishes.stream().distinct().count());
+							System.out.println(dishes.stream().count());
+							dishes.stream().distinct().forEach(System.out::println);
+							Integer sum = dishes.stream().mapToInt(dish -> dish.getCalories()).sum();
+							System.out.println(sum);
 		
+							System.out.println("************************************");
+							
+							dishes.stream().distinct().forEach(System.out::println);// based on equals and hash code
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+							System.out.println("///////");
+							dishes.stream().sorted().forEach(System.out::println);// based on compateTo()
 		
 		
 		
